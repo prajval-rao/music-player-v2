@@ -1,4 +1,4 @@
-wavely/
+musicplayer-v2
 ├── README.md, .gitignore
 ├── backend/
 │   ├── requirements.txt, .env.example
