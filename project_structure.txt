@@ -1,0 +1,26 @@
+wavely/
+├── README.md, .gitignore
+├── backend/
+│   ├── requirements.txt, .env.example
+│   ├── app/
+│   │   ├── main.py
+│   │   ├── core/        config, database, security (JWT)
+│   │   ├── models/      user, track, album, artist, playlist, playlist_track, liked_track, play_history
+│   │   ├── schemas/     matching Pydantic schemas
+│   │   ├── routers/     auth, tracks (upload), stream (Range requests), playlists, library, search, history
+│   │   └── services/    metadata (ID3 via mutagen), storage, streaming, recommendations
+│   └── tests/
+├── frontend/
+│   ├── index.html, login.html
+│   ├── css/             variables, base, sidebar, player-bar, tracklist, cards, responsive
+│   ├── js/
+│   │   ├── player/      audioEngine, queue, shuffle, repeat, mediaSession, keyboard, store
+│   │   ├── api/         client + one module per backend router
+│   │   ├── components/  NowPlayingBar, ProgressBar, VolumeSlider, Sidebar, TrackRow, QueuePanel, UploadModal, ContextMenu, ...
+│   │   ├── pages/       Home, Search, Library, LikedSongs, Playlist, Album, Artist, Recent, Upload
+│   │   ├── utils/       format, dom, dragdrop
+│   │   ├── router.js, app.js
+│   └── assets/
+├── storage/             audio/ and covers/ (uploaded files)
+├── data/                SQLite database
+└── docs/                FEATURES.md (checklist), API.md, DATABASE.md
