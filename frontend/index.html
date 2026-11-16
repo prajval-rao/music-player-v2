@@ -1,9 +1,159 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        
-    </head>
-    <body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music player</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --text: #b9b9bb;
+      --muted: #9aa0b4;
+      --accent: #867bb1;
+      --accent-2: #c5768c;
+    }
 
-    </body>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 14px 32px;
+      background: rgba(15, 17, 23, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      font-size: 1rem;
+    }
+
+    .nav {
+      display: flex;
+      gap: 6px;
+      list-style: none;
+    }
+
+    .nav a {
+      display: block;
+      padding: 8px 14px;
+      border-radius: 8px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s, background 0.2s;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      color: var(--text);
+      background: var(--surface);
+    }
+
+    .search {
+      flex: 0 1 280px;
+    }
+
+    .search input {
+      width: 100%;
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      background: var(--surface);
+      color: var(--text);
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .search input::placeholder { color: var(--muted); }
+    .search input:focus { border-color: var(--accent); }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 8px 18px;
+      border-radius: 999px;
+      border: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.15s, opacity 0.2s;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="#" class="logo">
+      <span class="logo-icon">♪</span>
+      Wavelength
+    </a>
+
+    <nav>
+      <ul class="nav">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Upload</a></li>
+        <li><a href="#">Library</a></li>
+        <li><a href="#">Playlists</a></li>
+      </ul>
+    </nav>
+
+    <div class="search">
+      <input type="search" placeholder="Search songs, artists, albums…" aria-label="Search">
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-ghost">Log in</button>
+      <button class="btn btn-primary">Sign up</button>
+    </div>
+  </header>
+  <script src="js/app.js"></script>
+</body>
 </html>
